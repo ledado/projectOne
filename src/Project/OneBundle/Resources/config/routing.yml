@@ -1,0 +1,3 @@
+project_one_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ProjectOneBundle:Default:index }
