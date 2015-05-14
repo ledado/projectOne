@@ -1,0 +1,42 @@
+Project\OneBundle\Entity\User:
+    type: entity
+    repositoryClass: Project\OneBundle\Repository\UserRepository
+    table: user
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: true
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 25
+            fixed: false
+            comment: ''
+            default: ''
+        email:
+            type: string
+            nullable: false
+            length: 60
+            fixed: false
+            comment: ''
+            default: ''
+        password:
+            type: string
+            nullable: false
+            length: 64
+            fixed: false
+            comment: ''
+            default: ''
+    oneToMany:
+        articles:
+            targetEntity: Article
+            mappedBy: user
+            cascade: [persist]
+            orphanRemoval: true
+    lifecycleCallbacks: {  }
